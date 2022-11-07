@@ -1,0 +1,9 @@
+nama = str(input("Inputkan nama : "))
+
+spasi = nama.count(" ")
+huruf = len(nama) 
+total = huruf - spasi
+
+print("banyak karakter adalah : ",huruf)
+print("banyak spasi adalah    : ",spasi)
+print("banyak huruf           : ",total)
