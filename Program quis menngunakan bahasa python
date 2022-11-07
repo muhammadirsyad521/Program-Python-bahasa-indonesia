@@ -1,0 +1,105 @@
+soal = "Soal Komunikasi Data".center(100)
+print(soal)
+
+print("\t\t\t\tJawablah soal objectiv dibahwa ini")
+
+nilai = 0
+#soal 1 
+print("""
+     1. Jaringan komputer yang ruang lingkupnya kecil adalah ….
+A. LAN 
+B. MAN
+C. WAN
+D. PAN
+E. Semua jawaban benar
+
+      """)
+soal1 = str(input("Inputkan jawaban anda : "))
+soal1 = soal1.upper()
+
+if soal1 == 'A' :
+    print("Benar")
+    nilai = 1
+else : 
+    print("Salah")  
+
+#soal 2
+
+print("""
+     2. Suatu bentuk dan metode yang menghubungkan (interkoneksi) berbagai macam perangkat komputasi (sering disebut juga end node) sehingga dapat berkomunikasi satu sama lain merupakan pengertian dari ….
+A. Transmisi
+B. Jaringan komputer 
+C. Switching
+D. Signaling
+E. Jaringan
+""")
+soal2 = str(input("Inputkan jawaban anda : "))
+soal2 = soal2.upper()
+
+if soal2 == 'B' :
+    print("Benar")
+    nilai= nilai + 1
+else : 
+    print("Salah")
+
+#soal 3
+
+print("""
+     3. Mudah dalam melakukan backup data, karena manajemen yang tersentralisasi merupakan manfaat utama dari ….
+A. Transmisi
+B. Jaringan komputer 
+C. Switching
+D. Signaling
+E. Jaringan
+""")
+soal3 = str(input("Inputkan jawaban anda : "))
+soal3 = soal3.upper()
+
+if soal3 == 'B' :
+    print("Benar")
+    nilai= nilai + 1
+else : 
+    print("Salah")
+
+#soal 4
+
+print("""
+     4. Merupakan suatu teknologi yang digunakan pada switch untuk menghubungkan panggilan (pada jaringan telepon) atau mengarahkan / meneruskan paket dari suatu link ke link yang lain adalah ….
+A. Transmisi
+B. Jaringan komputer
+C. Switching 
+D. Signaling
+E. Jaringan
+""")
+soal4 = str(input("Inputkan jawaban anda : "))
+soal4 = soal4.upper()
+
+if soal4 == 'C' :
+    print("Benar")
+    nilai= nilai + 1
+else : 
+    print("Salah")
+
+#soal 5
+
+print(""""
+     5. Proses membawa informasi antar-end points di dalam sistem atauu jaringan adalah ….
+A. Transmisi 
+B. Jaringan komputer
+C. Switching
+D. Signaling
+E. Jaringan
+""")
+soal5 = str(input("Inputkan jawaban anda : "))
+soal5 = soal5.upper()
+
+if soal5 == 'A' :
+    print("Benar")
+    nilai= nilai + 1
+else : 
+    print("Salah")
+
+print("\n\n\n")
+
+total = nilai / 5 * 100
+print("Total Nilai anda  : ",total )
