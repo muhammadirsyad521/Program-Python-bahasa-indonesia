@@ -1,0 +1,116 @@
+import random
+print("\t\t\t\tProgram suit")
+
+print("""
+        Ketentuan main:
+        1. jempol     kalah  dari kelingking
+        2. jempol     menang dari telunjuk 
+        3. kelingking kalah  dari telunjuk
+        4. kelingking menang dari jempol
+        5. telunjuk   kalah  dari jempol
+        6. telunjuk   menang dari jempo
+""")
+kemenangan_pemain1 = 0
+kemenangan_pemain2 = 0
+kesempatan = 0
+while kesempatan  < 5 :
+        kesempatan = kesempatan + 1   
+
+        pilihan  =["jempol","telunjuk","kelingking"]
+        pilihan_acak_komputer = random.randint(0,2)
+        pemain_2 = pilihan[pilihan_acak_komputer]
+        
+        print("Kesempatan",kesempatan)
+        print("Inputkan suit anda (jempol/kelingking/telujuk)")
+
+        pemain_1 = str(input("Inputkan suit Pemain 1 : "))
+        print("Inputkan suit pemain 2 : ",pemain_2)
+
+
+        pemain_1 = pemain_1.lower()
+        pemain_2 = pemain_2.lower()
+
+        menang  = "Menang"
+        kalah   = "Kalah"
+        seri    = "Seri "
+         
+        if pemain_1 == "jempol" and pemain_2 == "telunjuk" :
+            print(pemain_1," ",menang," ","Dari",pemain_2)
+            kemenangan_pemain1 = kemenangan_pemain1 + 1
+            kemenangan_pemain2 = kemenangan_pemain2 + 0
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+             
+        elif pemain_1 == "jempol" and pemain_2 == "kelingking" :
+            print(pemain_1," ",kalah," ","Dari",pemain_2)    
+            kemenangan_pemain1 = kemenangan_pemain1 + 0
+            kemenangan_pemain2 = kemenangan_pemain2 + 1
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+
+        elif pemain_1 == "kelingking" and pemain_2 == "jempol" :
+            print(pemain_1," ",menang," ","Dari",pemain_2)   
+            kemenangan_pemain1 = kemenangan_pemain1 + 1
+            kemenangan_pemain2 = kemenangan_pemain2 + 0
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+
+        elif pemain_1 == "kelingking" and pemain_2 == "telunjuk" :
+            print(pemain_1," ",kalah," ","Dari",pemain_2)    
+            kemenangan_pemain1 = kemenangan_pemain1 + 0
+            kemenangan_pemain2 = kemenangan_pemain2 + 1
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+
+        elif pemain_1 == "telunjuk" and pemain_2 == "kelingking" :
+            print(pemain_1," ",menang," ","Dari",pemain_2)
+            kemenangan_pemain1 = kemenangan_pemain1 + 1
+            kemenangan_pemain2 = kemenangan_pemain2 + 0 
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+
+        elif pemain_1 == "telunjuk" and pemain_2 == "jempol" :   
+            print(pemain_1," ",kalah," ","Dari",pemain_2)    
+            kemenangan_pemain1 = kemenangan_pemain1 + 0
+            kemenangan_pemain2 = kemenangan_pemain2 + 1
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+
+        elif pemain_1 == "telunjuk" and pemain_2 == "telunjuk" :   
+            print(pemain_1," ",seri," ","Dari",pemain_2)
+            kemenangan_pemain1 = kemenangan_pemain1 + 0
+            kemenangan_pemain2 = kemenangan_pemain2 + 0
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+
+        elif pemain_1 == "kelingking" and pemain_2 == "kelingking" :   
+            print(pemain_1," ",seri," ","Dari",pemain_2)
+            kemenangan_pemain1 = kemenangan_pemain1 + 0
+            kemenangan_pemain2 = kemenangan_pemain2 + 0
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+
+        elif pemain_1 == "jempol" and pemain_2 == "jempol" :   
+            print(pemain_1," ",seri," ","Dari",pemain_2)    
+            kemenangan_pemain1 = kemenangan_pemain1 + 0
+            kemenangan_pemain2 = kemenangan_pemain2 + 0 
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+
+        else:
+            print("Masukan suit dengan benar")
+            print("Score Pemain 1 ===> ",kemenangan_pemain1)
+            print("Score Pemain 2 ===> ",kemenangan_pemain2)
+        print("\n\n")
+
+print("\n\n")
+
+print("Score pemain 1 : ",kemenangan_pemain1)
+print("Score pemain 2 : ",kemenangan_pemain2)
+
+if kemenangan_pemain1 > kemenangan_pemain2 :
+    print("pemain 1 ",menang,"dengan score : ",kemenangan_pemain1,":",kemenangan_pemain2)
+elif kemenangan_pemain1 < kemenangan_pemain2:
+    print("pemain 2 ",menang,"dengan score : ",kemenangan_pemain2,":",kemenangan_pemain1)
+else:
+    print("Seri")
