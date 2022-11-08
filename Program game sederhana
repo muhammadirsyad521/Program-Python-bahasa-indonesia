@@ -1,0 +1,336 @@
+import random
+
+print("\t\t\tGame melawan monster yang terdiri dari 2 level ")
+
+print("""
+          Ketentuan bermain : 
+          1. Game terdiri dari 2 level 
+          2. Pemain harus memilih 1 Hero dari 3 pilihan hero
+          3. Setiap Hero memiliki atribut Attack dan Defense
+          4. monster di setiap level memiliki Attack dan Defense bervariasi
+          5. Untuk mencapai kemenagan hero harus bisa mengalahkan monster di setiap level
+          6. Monster dapat dikalahkan dengan berlatih
+          7. Selamat bermain  
+""")
+
+print(""""
+           Hero : 
+          1. Snowtrom   ===> Attack  : 100
+                            Defense  : 80
+
+          2. Powerzuma  ===> Attack  : 70
+                            Defense  : 120
+
+          3. AriBadak   ===> Attack  : 120
+                            Defense  : 80                                 
+""")
+
+hero = int(input("Inputkan Hero dengan memasukan angka 1/2/3 : "))
+
+if hero == 1:
+     attack  = 100
+     defense = 80
+     print("Hero anda adalah Snowtrom")
+
+elif hero == 2:
+    attack = 70
+    defense= 120
+    print("Hero anda adalah Powerzuma")
+
+elif hero == 3 :
+     attack  = 120
+     defense = 80
+     print("Hero anda adalah AriBadak")
+
+else:
+    print("Anda belum memilih hero")
+    quit(exit) 
+
+
+
+print("Power dari hero adalah : ""Attack",attack,"Defense",defense)
+
+#level 1 ##################################################################################
+
+# Menentukan attack dan defense monster
+attack_random  =[200,150,250]
+defense_random =[150,120,100]
+
+pilihan_acak_attack = random.randint(0,2) 
+attack_monster = attack_random[pilihan_acak_attack]
+
+pilihan_acak_defense = random.randint(0,2) 
+defense_monster = defense_random[pilihan_acak_defense]
+
+monster_easy = [attack_monster,defense_monster]
+
+# Pertarungan
+print("\t\t\t\t\tLEVEL 1")
+print("\n")
+print("\t\t\t\t\tPERTARUNGAN")
+print("\n")
+print("Attack Hero     :",attack)
+print("Defense Hero    :",defense)
+print("Attack Monster  :",attack_monster)
+print("Defense Monster :",defense_monster)
+print("\n")
+if attack > attack_monster and defense > defense_monster:
+    print("Hero Menang")
+    lanjut = [attack,defense]
+else:
+    print("Hero Kalah")
+    latihan = [attack,defense]
+
+#Berlatih
+print("\n")
+print("\t\t\t\t\tBerlatih")
+print("\n")
+hasil_persetujuan = str(input("Apakah anda ingin berlatih? [Ya/tidak]"))
+hasil_persetujuan = hasil_persetujuan.lower()
+
+print(hasil_persetujuan)
+
+if hasil_persetujuan == "ya":
+
+   kesempatan = 0
+   attack_hasil_pelatihan = 0
+   defense_hasil_pelatihan =0
+   pelatihan_attack = 0
+   pelatihan_defense = 0
+
+   while kesempatan < 3 :
+     kesempatan = kesempatan + 1
+     data_latihan = int(input("Berapa kemampuan yang ingin anda tambah ? (hanya 100-300) "))
+     
+     if data_latihan >= 100 and data_latihan <= 300 :
+
+            pelatihan_attack  = attack + data_latihan 
+            pelatihan_defense = defense + data_latihan
+            defense = 0
+            attack = 0 
+            attack_hasil_pelatihan = attack_hasil_pelatihan + pelatihan_attack
+            defense_hasil_pelatihan = defense_hasil_pelatihan + pelatihan_defense
+
+            print("attack hasil pelatihan",attack_hasil_pelatihan)
+            print("Defense hasil pelatihan",defense_hasil_pelatihan)
+                                   
+     else:
+            print("silahkan ulang lagi pelatihan")
+
+else :
+    print("Selamat tinggal , anda tidak akan berhasil jika tidak mau berlatih")
+    quit(exit)
+
+attack  = attack_hasil_pelatihan
+defense = defense_hasil_pelatihan
+
+print("\n")
+
+print("Attack hasil pelatihan  : ",attack)
+print("Defense hasil pelatihan : ",defense)
+
+print("\n")
+
+print("Hero akan melakukan penyesuaian jika kemampuan di luar batasan seharusnya")
+if attack > 300 and defense > 200 :
+    attack =  260
+    defense = 200  
+      
+   
+#Petarungan ulang
+print("\n")
+print("\t\t\t\t\tPERTARUNGAN ULANG")
+print("\n")
+print("Attack  Hero    :",attack)
+print("Defense Hero    :",defense)
+print("Attack  Monster :",attack_monster)
+print("Defense Monster :",attack_monster)
+
+if attack > attack_monster and defense > defense_monster:
+    print("Hero Menang")
+    lanjut = [attack,defense]
+else:
+    print("Hero Kalah")
+    latihan = [attack,defense]
+
+print("\n")
+print("\t\t\t\tHero akan melanjutkan Ke  Level Berikutnya ")
+print("\n\n")
+
+
+
+
+#level 2###################################################################################
+
+attack_random  =[500,700,850]
+defense_random =[600,500,450]
+
+pilihan_acak_attack = random.randint(0,2) 
+attack_monster = attack_random[pilihan_acak_attack]
+
+pilihan_acak_defense = random.randint(0,2) 
+defense_monster = defense_random[pilihan_acak_defense]
+
+monster_easy = [attack_monster,defense_monster]
+
+# Pertarungan
+
+print("\t\t\t\t\tLEVEL 2")
+print("\n")
+print("\t\t\t\t\tPERTARUNGAN")
+print("\n")
+
+print("Attack Hero     :",attack)
+print("Defense Hero    :",defense)
+print("Attack Monster  :",attack_monster)
+print("Defense Monster :",defense_monster)
+print("\n")
+persetujuan = str(input("Apakah kau ingin berlatih atau lansung menyerang : [Serang/Latih]" ))
+persetujuan = persetujuan.lower()
+
+if persetujuan == "latih":
+    hasil_persetujuan = str(input("Apakah anda ingin berlatih? [Ya/tidak]"))
+else:
+    if attack > attack_monster and defense > defense_monster:
+        print("Hero Menang")
+        lanjut = [attack,defense]
+    else:
+        print("Hero Kalah,Anda tidak belajar dari kesalahan")
+        quit(exit)
+    
+
+#Berlatih
+print("\n")
+print("\t\t\t\t\tBerlatih")
+print("\n")
+
+hasil_persetujuan = hasil_persetujuan.lower()
+
+
+
+if hasil_persetujuan == "ya":
+
+   kesempatan = 0
+   attack_hasil_pelatihan = 0
+   defense_hasil_pelatihan =0
+   pelatihan_attack = 0
+   pelatihan_defense = 0
+
+   while kesempatan < 3 :
+     kesempatan = kesempatan + 1
+     data_latihan = int(input("Berapa kemampuan yang ingin anda tambah ? (hanya 100-500) "))
+     
+     if data_latihan >= 100 and data_latihan <= 500 :
+
+            pelatihan_attack  = attack + data_latihan 
+            pelatihan_defense = defense + data_latihan
+            defense = 0
+            attack = 0 
+            attack_hasil_pelatihan = attack_hasil_pelatihan + pelatihan_attack
+            defense_hasil_pelatihan = defense_hasil_pelatihan + pelatihan_defense
+
+            print("attack hasil pelatihan",attack_hasil_pelatihan)
+            print("Defense hasil pelatihan",defense_hasil_pelatihan)
+                                   
+     else:
+            print("silahkan ulang lagi pelatihan")
+
+else :
+    print("Selamat tinggal , anda tidak akan berhasil jika tidak mau berlatih")
+    quit(exit)
+
+attack  = attack_hasil_pelatihan
+defense = defense_hasil_pelatihan
+
+print("\n")
+
+print("Attack hasil pelatihan  : ",attack)
+print("Defense hasil pelatihan : ",defense)
+
+print("\n")
+
+print("Hero akan melakukan penyesuaian jika kemampuan di luar batasan seharusnya")
+if attack > 1000 and defense > 800 :
+    attack =  900
+    defense = 680  
+      
+   
+#Petarungan ulang
+print("\n")
+print("\t\t\t\t\tPERTARUNGAN ULANG")
+print("\n")
+print("Attack  Hero    :",attack)
+print("Defense Hero    :",defense)
+print("Attack  Monster :",attack_monster)
+print("Defense Monster :",attack_monster)
+
+persetujuan = str(input("Apakah kau ingin berlatih atau lansung menyerang : [Serang/Latih]" ))
+persetujuan = persetujuan.lower()
+
+if persetujuan == "latih":
+    hasil_persetujuan = str(input("Apakah anda ingin berlatih? [Ya/tidak]"))
+    print("\n")
+    print("\t\t\t\t\tBerlatih")
+    print("\n")
+
+    hasil_persetujuan = hasil_persetujuan.lower()
+
+
+
+    if hasil_persetujuan == "ya":
+        kesempatan = 0
+        attack_hasil_pelatihan = 0
+        defense_hasil_pelatihan =0
+        pelatihan_attack = 0
+        pelatihan_defense = 0
+
+        while kesempatan < 3 :
+            kesempatan = kesempatan + 1
+            data_latihan = int(input("Berapa kemampuan yang ingin anda tambah ? (hanya 100-500) "))
+            
+            if data_latihan >= 100 and data_latihan <= 500 :
+
+                    pelatihan_attack  = attack + data_latihan 
+                    pelatihan_defense = defense + data_latihan
+                    defense = 0
+                    attack = 0 
+                    attack_hasil_pelatihan = attack_hasil_pelatihan + pelatihan_attack
+                    defense_hasil_pelatihan = defense_hasil_pelatihan + pelatihan_defense
+
+                    print("attack hasil pelatihan",attack_hasil_pelatihan)
+                    print("Defense hasil pelatihan",defense_hasil_pelatihan)
+                                        
+            else:
+                    print("silahkan ulang lagi pelatihan")
+
+    else :
+        print("Selamat tinggal , anda tidak akan berhasil jika tidak mau berlatih")
+        quit(exit)
+
+    attack  = attack_hasil_pelatihan
+    defense = defense_hasil_pelatihan
+
+    print("\n")
+
+    print("Attack hasil pelatihan  : ",attack)
+    print("Defense hasil pelatihan : ",defense)
+
+    print("\n")
+
+    print("Hero akan melakukan penyesuaian jika kemampuan di luar batasan seharusnya")
+    if attack > 1000 and defense > 800 :
+        attack =  900
+        defense = 680  
+else:
+
+    if attack > attack_monster and defense > defense_monster:
+            print("Hero Menang")
+            lanjut = [attack,defense]
+    else:
+            print("Hero Kalah")
+            quit(exit)
+
+
+print("\n")
+print("\t\t\t\tSelamat anda telah mengalahkan seluruh Monster ")
+print("\n\n")
