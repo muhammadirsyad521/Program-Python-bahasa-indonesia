@@ -1,0 +1,43 @@
+import random
+
+print("Nilai hanya ada 1,2,3,4,5,6")
+player2 = 0
+player1= 0
+kesempatan = 0
+total_player1 = 0
+total_player2 = 0
+
+while kesempatan < 5 :
+    kesempatan = kesempatan + 1
+    data_angka1 = [1,2,3,4,5,6]
+    data_angka2 = [1,2,3,4,5,6]
+    pilihan1 = random.randint(0,5)
+    pilihan2 = random.randint(0,5)
+    player1 = data_angka1[pilihan1]
+    player2 = data_angka2[pilihan2]
+
+    
+    print("Kesempatan",kesempatan,"\n")
+    persetujuan = str(input("apakah Player 1 ingin memutar dadu ? [oke] : "))
+    print("Hasil : ",player1)
+    persetujuan = str(input("apakah Player 2 ingin memutar dadu ? [oke] : "))
+    print("Hasil : ",player2)
+
+    total_player1 = total_player1 +  player1
+    total_player2 = total_player2 +  player2
+    print("\n")
+
+
+if total_player1 > total_player2 : 
+    win = f"Player 1 Menang dengan score : {total_player1} "
+elif total_player1 < total_player2:
+    win = f"Player 2 menang dengan score : {total_player2}"
+else:
+    win = f"Player 1 dan 2 Seri  "
+
+print(f""""
+Score Player 1 : {total_player1}
+Score Player 2 : {total_player2}    
+{win}
+""")
+
