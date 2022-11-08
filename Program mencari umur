@@ -1,0 +1,23 @@
+import datetime
+
+tanggal = int(input("Inputkan tanggal lahir anda : "))
+bulan   = int(input("Inputkan bulan lahir anda   : "))
+tahun   = int(input("Inputkan tahun lahir anda   : "))
+
+tgl_lahir = datetime.date(tahun,bulan,tanggal) #tanggal lahir
+Hari_ini = datetime.date.today() #tanngal sekarang
+umur = Hari_ini - tgl_lahir
+jumlah_hari = umur.days
+
+tahun = jumlah_hari // 365
+sudo  = jumlah_hari % 365
+bulan = sudo // 30
+Hari  = sudo % 30 
+
+
+
+print(f"""
+Tanggal lahir   = {tgl_lahir},  Hari = {tgl_lahir:%A}
+Tanggal sekarang= {Hari_ini},  Hari = {Hari_ini:%A}
+Umur = {tahun} tahun  {bulan} bulan  {Hari} Hari
+""")
