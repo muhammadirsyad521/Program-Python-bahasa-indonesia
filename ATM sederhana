@@ -1,0 +1,67 @@
+password = "saya"
+kesempatan= 0
+percobaan = 0
+id_login = "ohayok"
+saldo = 850000
+
+while kesempatan <= 3 or password =="saya" or id_login =="ohayok":
+    percobaan = percobaan + 1
+    print("percobaan ",percobaan)
+    id_login = str(input("Inputkan id login anda : "))
+    password = str(input("Inputkan Passowrd      : ")) 
+    if password == "saya" and id_login == "ohayok":
+        break
+    else: 
+        kesempatan=kesempatan + 1
+    if kesempatan == 3:
+        print("\nMaaf kartu anda di blokir\n")
+        quit(exit)
+
+#masuk menu
+print("\n\n")
+
+angka = 1
+
+while angka > 0 : 
+    angka = angka + 1
+    print(20*"="+"Menu"+"="*20)
+    print(f"""
+    1. Cek saldo              3.Exit
+    2. Penarikan              
+    """)
+
+    pilihan = int (input("Silahkan pilih layanan yang anda inginkan [1/2/3/4] =  "))
+
+    if pilihan == 1 :
+        print(f" Total Saldo anda  :{saldo} ")
+    elif pilihan == 2 :
+        print("""
+                Ketentuan penarikan : 
+                1. pecahan 50.000 / 100.000
+                2. mimimal saldo 70.000 untuk penarikan
+        """)
+        penarikan = int(input("Silahkan Inputkan saldo yang ingin anda tarik : ")) 
+        pecahan = int(input("Inputkan pecahan yang ingin anda pilih : ")) 
+        
+        if pecahan == 50000 and saldo > 70000 and saldo > penarikan:
+            saldo = saldo - penarikan
+            jumlah_lembar = penarikan / 50000
+            jumlah_lembar = int(jumlah_lembar)
+            print(F"Hasil penarikan  = {penarikan}")
+            print(f"Jumlah lembar    = {jumlah_lembar} uang 50.000 ")
+            print("Total saldo : ",saldo)
+        elif pecahan == 100000 and saldo > 70000 and saldo>penarikan:
+            saldo = saldo - penarikan
+            jumlah_lembar = penarikan / 100000
+            jumlah_lembar = int(jumlah_lembar)
+            print(F"Hasil penarikan  = {penarikan}")
+            print(f"Jumlah lembar    = {jumlah_lembar} uang 100.000 ")
+            print(f"Total Saldo = {saldo}")
+        else :
+            print("EROOR")
+            print("kembali ke menu ")
+            continue
+    else:
+        break
+
+print(5*"="+"Terimakasih"+"="*5)
