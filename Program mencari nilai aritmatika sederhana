@@ -1,0 +1,17 @@
+print("Program mencari nilai ke  n")
+
+a = int(input("Inputkan suku awal  : "))
+b = int(input("Inputkan beda        : "))
+n = int(input("Inputkan  suku ke-n yang ingin dicari :  "))
+
+oleng = a
+for i in range(n):
+    print(a)
+    a = a + b
+
+
+a = oleng 
+
+un = a + (n - 1) * b
+
+print(f"Nilai ke-{n} = {un}")
