@@ -1,0 +1,26 @@
+print("\nProgram menentukan  nilai mahasiswa lulus atau tidak\n")
+
+jumlah_mahasiswa = int(input("Inputkan Jumlah mahasiswa : "))
+banyak_mahasiswa_lulus = 0
+banyak_mahasiswa_gagal = 0
+sum_lulus = 0
+sum_gagal = 0
+for i in range(1,jumlah_mahasiswa + 1):
+    nilai_mahasiswa = int(input(f"\nInputkan nilai mahasiswa {i} = "))
+    if nilai_mahasiswa > 70 and nilai_mahasiswa < 101: 
+        sum_lulus = sum_lulus + nilai_mahasiswa
+        banyak_mahasiswa_lulus = banyak_mahasiswa_lulus + 1
+    else:
+        banyak_mahasiswa_gagal = banyak_mahasiswa_gagal + 1
+        sum_gagal = sum_gagal + nilai_mahasiswa
+
+rata_lulus = sum_lulus / banyak_mahasiswa_lulus
+rata_gagal =  sum_gagal / banyak_mahasiswa_gagal
+rata_seluruh_siswa = (sum_gagal + sum_lulus) / jumlah_mahasiswa
+print(f"\nBanyak mahasiswa Lulus              :{banyak_mahasiswa_lulus}")
+print(f"Total Nilai Mahasiswa yang lulus    :{sum_lulus}")
+print(f"Rata rata Nilai Mahasiswa yang lulus:{rata_lulus}\n")
+print(f"Banyak Mahsiswa Gagal               :{banyak_mahasiswa_gagal} ")
+print(f"Total Nilai Mahasiswa yang gagal    :{sum_gagal}")
+print(f"Rata rata Nilai Mahasiswa yang gagal:{rata_gagal}\n")
+print(f"Rata rata nilai seluruh Mahasiswa   :{rata_seluruh_siswa}\n")
