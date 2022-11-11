@@ -1,0 +1,49 @@
+#Pendaftaran registrasi
+
+data_id = []
+data_paswword = []
+regitrasi = 0
+jumlah_pendaftar = int(input("Inputkan jumlah pendaftar : "))
+jumlah_pendaftar = jumlah_pendaftar + 1
+for i  in range(1,jumlah_pendaftar):
+    regitrasi = regitrasi + 1
+    print(f" Nomor Registarsi :  {regitrasi}\n")
+    masukan_id = str(input("Inputkan userrname :"))
+    masukan_paswword = str(input("Inptukan Password  :"))
+    data_paswword.append(masukan_paswword)
+    data_id.append(masukan_id)
+    print("\n")
+
+jumlah_pendaftar = jumlah_pendaftar - 1    
+if regitrasi == jumlah_pendaftar :
+  print("Registrasi Selesai\n")
+
+
+print(5*"="+"Login"+"="*5)
+
+nomor_Registrasi = int(input("Inputkan nomor registrasi anda "))
+nomor_Registrasi = nomor_Registrasi - 1
+data_id_login = data_id[nomor_Registrasi]
+data_paswword_login = data_paswword[nomor_Registrasi]
+
+kesemapatan = 0
+ulang = 0
+for i in range (1,4):
+    kesemapatan = kesemapatan + 1
+    print(f"\nKesempatan : {kesemapatan}")
+    userrname = str(input("Inptukan Username : "))
+    password  = str(input("Inptukan password : "))  
+    if userrname == data_id_login and password ==data_paswword_login:
+      print("\nLogin Sukses")
+      break
+    else:
+      print("\n!!!Login gagal")
+      ulang = ulang + 1
+      continue
+    
+if ulang == 3:
+  print("Maaf identitas anda tidak dikenali")
+  print("\n")
+  quit(exit)
+    
+print("Silahkan pilih layanan yang anda mau ")   
