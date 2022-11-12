@@ -1,0 +1,32 @@
+data_dic = {
+
+}
+print("Program Membuat dictionary ")
+
+while True:
+  nomor = str(input("Inputkan nomor : "))
+  nama  = str(input("Inputkan nama  : "))
+
+  data_dic.update({nomor:nama})
+  persetujuan = str(input("apakah anda ingin berhenti [ya] : "))
+
+  if persetujuan  == "ya":
+    break
+  else:
+    continue
+
+print(data_dic)
+
+while True:
+    akses = str (input("Apakah anda ingin mengubah atau mengaksesnya ? [ubah/akses/keluar]"))
+
+    if akses == "ubah" :
+        nomor = str(input("Inputkan nomor : "))
+        data_dic[nomor] = str(input("Inputkan nama baru : "))
+        continue
+    elif akses == "akses" :
+        nomor_akses = str(input("Inputkan nomor akses : "))
+        print(data_dic[nomor_akses])   
+        continue 
+    else:
+        break
